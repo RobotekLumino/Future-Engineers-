@@ -7,7 +7,7 @@
 
 <div align=center>
 
-![logo](./img/banner.png)
+![logo](./img/Lumino.png)
 
 </div>
 
