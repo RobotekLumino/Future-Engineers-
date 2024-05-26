@@ -40,7 +40,7 @@ A full list of all the components (not including the camera) can be found here: 
 
 A 3D model of the robot made in Studio 2.0 can be found here: [3D Model](models/FE-Robot.io)
 
-The final program/code for our autonomous vehicle can be found here: [Program](src/FE_INTERNATIONAL.ev3)
+The final program/code for our autonomous vehicle can be found here: [Program](src/FE_Lumino.ev3)
 ***
 
 ## Mobility Management
