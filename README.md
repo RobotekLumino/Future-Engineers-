@@ -128,7 +128,6 @@ This regulator operates in real-time, continuously assessing the robot's positio
 ## Photos
 
 ### Vehicle Photos
-![vehph](./v-photos/Car_funny.PNG)
 ![vehph](./v-photos/1.jpg)
 ![vehph](./v-photos/2.jpg)
 ![vehph](./v-photos/3.jpg)
