@@ -33,7 +33,7 @@
 
 ***
 ## Our vehicle: 
-![vehph](./v-photos/Car_components.PNG)
+![vehph](./v-photos/Car.jpg)
 We used components from a EV3 MINDSTORMS Educational kit + a Pixy v2 Camera and some other technic pieces from other sets. 
 
 A full list of all the components (not including the camera) can be found here: [Part List](models/part-list.pdf)
@@ -137,8 +137,8 @@ This regulator operates in real-time, continuously assessing the robot's positio
 
 ### Team Photos
 
-![teamph2](./t-photos/t-official.jpeg)
-![teamph](./t-photos/t-funny.jpeg)
+![teamph2](./t-photos/t1.jpg)
+![teamph](./t-photos/t2.jpg)
 
 
 
