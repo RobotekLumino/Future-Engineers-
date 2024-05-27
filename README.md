@@ -146,9 +146,9 @@ This regulator operates in real-time, continuously assessing the robot's positio
 
 ## Performance Videos
 
-Qualification Round Challenge:
+Qualification Round Challenge: https://youtu.be/hCZPMtUDgTw
 
-Obstacle Round Challenge: 
+Obstacle Round Challenge: https://youtu.be/GyFYqLjbaOw
 
 ***
 
