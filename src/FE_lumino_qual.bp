@@ -1,0 +1,71 @@
+SteerKp=2
+SteerKi=0,1
+SteerKd=5
+GyroKp=1
+GyroKd=1,5
+UltrasonicKp=1,2
+Limit=35
+SteerCenter=80
+Speed=100
+SteerErr=0
+SteerErrOld=0
+SteerErrSum=0
+GyroErr=00
+GyroErrOld=0
+MotorOut=MotorC
+GyroAngle=0
+orange=0
+chas=0
+# руль для робота
+Function SetTarget(SteerDegree):
+  SteerErr=(SteerEnc-SteerEncNow)
+  SteerKp*SteerErr+SteerKd*SteerErrOld+SteerKi*SteerErrSum)=U
+  U+SteerDegree=MotorOut
+  SteerErr=SteerErrOld
+  SteerErrSum=(SteerErr+SteerErrOld)/1,1
+EndFunction
+# ПД для гиро 
+Function PDGyro(GyroAngle):
+  GyroErr=(GyroAngle-GyroAngleNow)
+  GyroKp*GyroErr+GyroKd*GyroErrOld=U
+  GyroErr=GyroErrOld
+EndFunction
+# П для ультразвука
+Function PUltraSonic(USDistance):
+  UltraSonicErr=(UltrasonicDist-UltrasonicDistNow)
+  UltrasonicErr*kp=U 
+EndFunction
+#езда робота до оранж/син линии
+while color.getRGBW = white:
+  MotorAB.SetPower(50)
+  SetTarget(PDGyro)
+EndWhile
+# опр цвет линии
+# еслм оранж по час если син то против
+If Color.GetRGBW = orange:
+  GyroAngle=GyroAngle+90
+  orange=1
+else:
+  GyroAngle=GyroAngle-90
+  orange=0
+EndIf
+# 3 круга 
+if orange=1:
+  while chas>11:
+    SetTarget(PDGyro+PUltraSonic)
+    GyroAngle=GyroAngle+90
+    chas=chas+1
+  EndWhile
+else:
+    while chas>11:
+    SetTarget(PDGyro+PUltraSonic)
+    GyroAngle=GyroAngle+90
+    chas=chas-1
+    EndWhile
+  EndFor
+# финиш
+While EncoderA<1000:
+ MotorAB.SetPower(50)
+  SetTarget(PDGyro)
+EndWhile
+  
