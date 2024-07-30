@@ -83,9 +83,9 @@ To protect the EV3 brick from short circuit, 3 poly switches are included, one f
 
 Power Schemes for every electronic part of the vehicle can be found here:
 
-[Color Sensor](schemes/color-sensor,pdf)
+[Color Sensor](schemes/color sensor.pdf)
 
-[Gyro Sensor](schemes/gyro-sensor.pdf)
+[Gyro Sensor](schemes/gyro sensor.pdf)
 
 [Medium Motor](schemes/medium-motor.pdf)
 
@@ -96,6 +96,8 @@ Power Schemes for every electronic part of the vehicle can be found here:
 [EV3 P-Brick](schemes/programmable-brick.pdf)
 
 [Rechargeable Battery](schemes/rechargeable-battery.pdf)
+
+[Internal battery components](schemes/Internal battery components)
 
 [Ultrasonic Sensor](schemes/ultrasonic-sensor.pdf)
 
