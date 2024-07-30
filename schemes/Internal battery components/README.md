@@ -3,7 +3,7 @@
     - 2 x 18650 Lithium Ion batteries marked “16Wh”.
     - 1 charging circuit. This is where the barrel socket and the LEDs are mounted.
     - 1 protection circuit(?). This is mounted on the 18650 batteries
-
+    <br>
     <div align="center"><img src="./img/battery.jpg" width="600" alt=" logo"></div>
     
   - #### Charging Circuit
