@@ -1,0 +1,16 @@
+ - #### Internal battery components
+   Inside the plastic case, you will find…
+       - 2 x 18650 Lithium Ion batteries marked “16Wh”.
+       - T1 charging circuit. This is where the barrel socket and the LEDs are mounted.
+       - 1 protection circuit. This is mounted on the 18650 batteries.
+   <td><img src="./img/battery.jpg" width = "500"  alt="low_voltage_alarm" align="center" /></td>
+    - #### Charging Circuit
+    The charging circuit is equipped with a Monolithic Power MP26123 battery charging IC. It’s rated for 9 to 24V, so the official Lego charger (10V) is on the lower end of this range. For those thinking of switching to a higher voltage charger; it’s not gonna charge your batteries any faster. The charging IC regulates the voltage and current, so it’ll be around the same regardless of your supply voltage. But it does mean that it’s probably safe to use the much more common 12V power supply to charge the battery.
+
+    Besides the charging IC, there is also a International Rectifier HS8242 power MOSFET. This is probably a replacement for a diode, to prevent the battery voltage from back-flowing to the charger. Nothing else really stands-out.
+   <td><img src="./img/charging-ic.jpg" width = "500"  alt="low_voltage_alarm" align="center" /></td>
+    - #### Protection Circuit
+    protection circuit equipped equipped with two Alpha and Omega Semiconductor 7426 N-Channel MOSFET.
+    <td><img src="./img/protection.jpg" width = "500"  alt="low_voltage_alarm" align="center" /></td>
+
+
