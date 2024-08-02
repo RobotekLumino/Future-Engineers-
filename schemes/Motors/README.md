@@ -12,86 +12,89 @@ To compete in the World Robot Olympiad (WRO) in the Future Engineers category, w
 <table>
 <tr ><th colspan="3">EV3 Large motor</th></tr>
 <tr align="center">
-<td><img src="./img/ev3l.jpg" width = "300" height = "225" alt="ev3" align=center /></td>
+<td><img src="./img/ev3l.jpg" width = "400" height = "" alt="ev3" align=center /></td>
 <th>This motor is very similar to NXT motor, but with slightly better fixing capability (compatible with Technic frames, holes aligned with hub). Its efficiency seems slightly lower.</th>
 </tr>
 </table>
 <table>
 <tr ><th colspan="3">EV3 Medium motor</th></tr>
 <tr align="center">
-<td><img src="./img/ev3m.jpg" width = "300" height = "225" alt="ev3" align=center /></td>
+<td><img src="./img/ev3m.jpg" width = "400" height = "" alt="ev3" align=center /></td>
 <th>This motor is one of the highlights of EV3 set compared to NXT one: a motor of reduced size and classical front axle hub. Reduced size comes with reduced power, similar to PF medium motor (but being more down-geared, it is slower and delivers more torque).</th>
 </tr>
 </table>
 </div>
 
-### Rear-Drive DC Motor
-- When selecting a DC motor among commonly available options in the market, considering factors such as weight, rotational speed, and torque, we have identified the following four suitable DC motors.
-- Among them, the three types of motors, JGA25, have different model numbers but share a similar physical appearance, and their differences are as follows.
+### Comparison of motors
 <div align="center"><table>
 <tr ><th colspan="5">DC Motor Comparison</th></tr>
 <tr align="center">
 <th rowspan="2" >Model</th>
-<th >JGA25 370</th>
-<th >JGA25 370</th>
-<th >JGA25 371</th>
-<th >JGA16-050</th>
+<th >NXT</th>
+<th >EV3 Large</th>
+<th >EV3 Medium</th>
 </tr>
 <tr align="center">
-<td ><img src="./img/JGA25-370_1360RPM.JPG" width = "150" alt="JGA25-370_1360RPM" /></td>
-<td ><img src="./img/JGA25-370_620RPM.JPG" width = "150" alt="JGA25-370_620RPM" /></td>
-<td ><img src="./img/JGA25-371_1_34.JPG" width = "100" alt="JGA25-371M" /></td>
-<td ><img src="./img/JGA16-050.png" width = "150" alt="JGA16-050" /></td>
+<td ><img src="./img/nxt.jpg" width = "150" /></td>
+<td ><img src="./img/ev3l.jpg" width = "150" /></td>
+<td ><img src="./img/ev3m.jpg" width = "150"/></td>
+</tr>
+<tr align="center">
+<td >Weight</td>
+<td >80g</td>
+<td >82g</td>
+<td >39g</td>
 </tr>
 <tr align="center">
 <td >Speed</td>
-<td >1360rpm</td>
-<td >620rpm</td>
-<td >294rpm</td>
-<td >220rpm</td>
+<td >170 rpm</td>
+<td >175rpm</td>
+<td >260 rpm</td>
 </tr>
-<tr align="center"><td>Torque</td><td>4.27kg.cm</td><td>9.15kg.cm</td><td>5.2kg.cm</td><td>1.15kgcm</td></tr><tr align="center">
-<td>Power</td><td>5.4W</td><td>5.4W</td><td>4.2W</td><td>0.33W</td>
+<tr align="center">
+<td >No-load current</td>
+<td >60 mA</td>
+<td >60mA</td>
+<td >80 mA</td>
+</tr>
+<tr align="center">
+<td >Stalled torque</td>
+<td >50 N.cm</td>
+<td >43 N.cm</td>
+<td >15 N.cm</td>
+</tr>
+<tr align="center">
+<td >Stalled current</td>
+<td >2 A</td>
+<td >1.8 A</td>
+<td >780 mA</td>
 </tr>
 </table>
 </div>  
 
-- After conducting experimental research, we found that choosing the high-speed 1630rpm JGA-370 motor resulted in lower torque, making it difficult for the vehicle to move effectively. On the other hand, opting for the high-torque JGA-371 motor led to an excessively low rotational speed, which did not meet the requirements for the vehicle's operation.
-- __Therefore, based on these findings, we ultimately selected the 620rpm JGA-370 motor as the rear-wheel drive DC motor for the vehicle. This choice strikes a balance between rotational speed and torque, providing the necessary performance for the vehicle's propulsion.__  
+###  Benefits of a mid-motor for WRO competition
+Compact and lightweight:
 
-### Motor Drive Controller
-- When testing the operation of the motor, simply providing power does not effectively control the movement of the GA25-370 motor, making it impossible to adjust the speed. Therefore, we need to install a motor controller to regulate the speed of the DC gear motor. Currently, there are two options available in the market: the L293D chip and the L298N module. To reduce weight, we __chose the smaller L293D chip.__   
-- __Its compact size allows us to install more sensors, thereby saving space, reducing weight, and increasing the maneuverability of the vehicle.__
+<ol>The medium motor is significantly smaller and lighter than the large motor, allowing for more compact designs. In competition conditions, this provides an advantage in maneuverability and flexibility in robot design.</ol>
+Fast response and high speed:
 
+<ol>Thanks to its high rotation speed, the medium motor provides quick response to commands. This is critical for tasks that require moving quickly or performing actions with high speed and accuracy.</ol>
 
-<div align="center">
-<table>
-<tr><th colspan="3">Motor Control Comparison</th></tr>
-<tr align="center" >
-<th rowspan="2">Model</th>
-<th>L293D</th>
-<th>L298N</th>
-</tr>
-<tr align="center">
-<td> <img src="./img/l293d.png" width = "300"  alt="l293d" align=center /></td>
-<td ><img src="./img/L298N.png" width = "300"  alt="l298n" align=center /></td>
-</tr>
-<tr align="center">
-<td>Occupied Area(mm)</td>
-<td>29.5x8</td>
-<td>43.5x43.5</td>
-</tr>
-<tr align="center">
-<td>Output Voltage</td>
-<td>4.5V to 36V</td>
-<td>5V to 46V</td>
-</tr>
-<tr align="center">
-<td>Rated Power </td>
-<td>5W</td>
-<td>10W</td>
-</tr>
-</table>
-</div>
+flexibility in design:
+<br>
+<ol>The smaller size of the middle motor allows it to be placed more freely in the robot design without taking up much space. This is especially important when creating complex mechanisms with limited space.</ol>
 
-# <div align="center">![HOME](../../other/img/Home.png)[Return Home](../../)</div>  
+Efficient use of space:
+
+<ol>The compact size of the middle motor allows optimal use of the robot's internal space to accommodate other necessary components, such as sensors and other actuators. </ol>
+
+Energy consumption:
+
+<ol>A medium motor consumes less energy compared to a large motor. This allows you to increase the robot's operating time without the need for frequent recharging, which is especially important in long-term competitions.</ol>
+
+Balance between power and functionality:
+
+<ol>The mid-mount motor provides enough power to handle most competition tasks while remaining compact and lightweight. This makes it the optimal choice for providing a balance between strength and speed.</ol>
+
+### Conclusion
+Using the LEGO Mindstorms EV3 Medium Motor in the World Robot Olympiad Future Engineers competition offers many benefits, including compactness, high speed, precision control and low power consumption. These characteristics make a medium motor an ideal choice for creating agile and efficient robots that can successfully perform complex tasks, which is key to achieving high results in competitions.
