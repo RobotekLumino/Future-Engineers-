@@ -5,21 +5,21 @@ To compete in the World Robot Olympiad (WRO) in the Future Engineers category, w
 <table>
 <tr ><th colspan="3">NXT motor</th></tr>
 <tr align="center">
-<td><img src="./img/nxt.jpg" width = "400" height = "" alt="NXT" align=center /></td>
+<td><img src="./img/nxt.jpg" alt="NXT" align=center /></td>
 <th>This motor is specific to the NXT set (2006). Includes a rotation encoder, returning to the NXT the position of the shaft with 1° resolution. Because of the special connector of this motor (non-standard phone plug type), a cable adapter is required to drive this motor with regular 9V sources. Not recommended for use with a RCX which can't deliver the high current that this motor can consume. Slow rotation speed, minimizing the need of external gear train.</th>
 </tr>
 </table>
 <table>
 <tr ><th colspan="3">EV3 Large motor</th></tr>
 <tr align="center">
-<td><img src="./img/ev3l.jpg" width = "400" height = "" alt="ev3" align=center /></td>
+<td><img src="./img/ev3l.jpg" alt="ev3" align=center /></td>
 <th>This motor is very similar to NXT motor, but with slightly better fixing capability (compatible with Technic frames, holes aligned with hub). Its efficiency seems slightly lower.</th>
 </tr>
 </table>
 <table>
 <tr ><th colspan="3">EV3 Medium motor</th></tr>
 <tr align="center">
-<td><img src="./img/ev3m.jpg" width = "400" height = "" alt="ev3" align=center /></td>
+<td><img src="./img/ev3m.jpg" alt="ev3" align=center /></td>
 <th>This motor is one of the highlights of EV3 set compared to NXT one: a motor of reduced size and classical front axle hub. Reduced size comes with reduced power, similar to PF medium motor (but being more down-geared, it is slower and delivers more torque).</th>
 </tr>
 </table>
