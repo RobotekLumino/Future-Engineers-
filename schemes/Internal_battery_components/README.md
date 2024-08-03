@@ -17,7 +17,7 @@
     protection circuit equipped equipped with two Alpha and Omega Semiconductor 7426 N-Channel MOSFET.
     
     <div align="center"><img src="./img/protection.jpg" width="500" alt=" logo"></div>
-</div>
+
 [You can also familiarize yourself with the diagram of the battery, which was made by the Lego](https://github.com/RobotekLumino/Future-Engineers-/blob/main/schemes/rechargaeble-battery.pdf)
-     
+   </div>  
  
