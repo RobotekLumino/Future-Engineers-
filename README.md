@@ -38,6 +38,8 @@ We used components from a EV3 MINDSTORMS Educational kit + a Pixy v2 Camera and 
 
 A full list of all the components (not including the camera) can be found here: [Part List](models/part-list.pdf)
 
+Instructions for assembling the robot: [Instructions](models/robot_assembly_instructions_FE_Lumino.pdf)
+
 A 3D model of the robot made in Studio 2.0 can be found here: [3D Model](models/FE-Robot.io)
 
 The final program/code for our autonomous vehicle can be found here: [Program](src/FE_Lumino.ev3)
@@ -87,7 +89,7 @@ Power Schemes for every electronic part of the vehicle can be found here:
 
 [Gyro Sensor](schemes/gyro-sensor.pdf)
 
-[Medium Motor](schemes/medium-motor.pdf)
+[Medium Motor](schemes/Motors)
 
 [Pixy v2](schemes/pixy2_schematic-2.2.pdf)
 
