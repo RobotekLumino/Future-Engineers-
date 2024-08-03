@@ -97,7 +97,7 @@ Power Schemes for every electronic part of the vehicle can be found here:
 
 [EV3 P-Brick](schemes/programmable-brick.pdf)
 
-[Rechargeable Battery](schemes/rechargeable-battery.pdf)
+[Rechargeable Battery](schemes/Internal_battery_components)
 
 [Internal battery components](schemes/Internal_battery_components)
 
