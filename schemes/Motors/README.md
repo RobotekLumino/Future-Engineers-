@@ -98,3 +98,5 @@ Compact and lightweight:
 
 ### Conclusion
 Using the LEGO Mindstorms EV3 Medium Motor in the World Robot Olympiad Future Engineers competition offers many benefits, including compactness, high speed, precision control and low power consumption. These characteristics make a medium motor an ideal choice for creating agile and efficient robots that can successfully perform complex tasks, which is key to achieving high results in competitions.
+
+[You can also get acquainted with the circuit design of a medium motor that was made by Lego](https://github.com/RobotekLumino/Future-Engineers-/blob/main/schemes/medium-motor.pdf)
