@@ -101,9 +101,9 @@ To compete in the World Robot Olympiad (WRO) in the Future Engineers category, w
 ### Graphs of Performance Characteristics
 
 <div align="center">
-<img src="./img/rpm_v.png.png" alt="RPM vs Torque" width="500" height="300">
-<img src="./img/rpm_torque.png.png" alt="RPM vs Current" width="500" height="300">
-<img src="./img/mA_torque.png.png" alt="Torque vs Current" width="500" height="300">
+<img src="./img/rpm_v.png" alt="RPM vs Torque" width="500" height="300">
+<img src="./img/rpm_torque.png" alt="RPM vs Current" width="500" height="300">
+<img src="./img/mA_torque.png" alt="Torque vs Current" width="500" height="300">
 </div>
 
 ### Conclusion
