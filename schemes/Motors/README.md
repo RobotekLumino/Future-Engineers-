@@ -105,6 +105,9 @@ To compete in the World Robot Olympiad (WRO) in the Future Engineers category, w
 <img src="./img/rpm_torque.png" alt="RPM vs Current" width="500" height="300">
 <img src="./img/mA_torque.png" alt="Torque vs Current" width="500" height="300">
 </div>
+<br>
+
+[You can look at the graphs of other motors](https://docs.google.com/spreadsheets/d/13-yyixLKzvtulG_vOfH1Eg9fGBAuLQ0HQ5uPV-f0eAk/edit?gid=1685315034#gid=1685315034)
 
 ### Conclusion
 
