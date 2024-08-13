@@ -23,7 +23,7 @@ In traditional steering systems, especially those using a simple four-bar linkag
 <table>
 <tr><th colspan="3" style="text-align: center;">Ackermann Angle Approximation with 4 Axes:</th></tr>
 <tr align="center">
-<td><img src="./img/Akkerman_os4.png" width="400" height="" alt="Ackermann os 4" align="center" /></td>
+<td><img src="../img/Akkerman_os4.png" width="400" height="" alt="Ackermann os 4" align="center" /></td>
 <th width="500" height="200">
 - Design Simplicity: Using 4 axes is generally simpler to implement and adjust. Fewer components simplify assembly and system setup.<br>
 - Simple Formulas: Formulas for calculating the angle and maneuverability with 4 axes are simpler, making the design and calculations easier.<br>
@@ -35,7 +35,7 @@ In traditional steering systems, especially those using a simple four-bar linkag
 <table>
 <tr><th colspan="3" style="text-align: center;">Ackermann Angle with 5 (Non-cyclic Gears):</th></tr>
 <tr align="center">
-<td><img src="./img/Akkerman_os5.png" width="400" height="" alt="Ackermann os 5" align="center" /></td>
+<td><img src="../img/Akkerman_os5.png" width="400" height="" alt="Ackermann os 5" align="center" /></td>
 <th width="500" height="200">
 - Improved Maneuverability: Using 5 axes and non-cyclic gears allows for more precise control of wheel turning angles, which can enhance maneuverability.<br>
 - Potentially Higher Accuracy: Non-cyclic gears can provide smoother and more accurate motion control.<br>
@@ -48,7 +48,7 @@ In traditional steering systems, especially those using a simple four-bar linkag
 
 To overcome the limitations of traditional steering mechanisms, we explored the use of non-cyclic gears. The non-cyclic gear mechanism is designed to maintain the correct Ackermann steering geometry throughout the entire range of turning angles. This approach ensures that our robot’s wheels remain perfectly aligned during both sharp and gentle turns, reducing unnecessary friction and improving overall maneuverability.
 
-<img src="./img/Akkerman.png" alt="Table and Graph" width="800" height="400">
+<img src="../img/Akkerman.png" alt="Table and Graph" width="800" height="400">
 <br>
 
 Unfortunately, due to our robot being built on the LEGO Mindstorms EV3 platform, implementing this solution was nearly impossible. Therefore, we decided to use a traditional solution based on a simple four-bar linkage.
