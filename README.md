@@ -104,7 +104,7 @@ To protect the EV3 brick from short circuit, 3 poly switches are included, one f
 
 [EV3 P-Brick](/schemes/programmable-brick/README.md)
 
-[Rechargeable Battery](/schemes/Internal_battery_components/README.md))
+[Rechargeable Battery](/schemes/Internal_battery_components/README.md)
 
 
 
