@@ -18,6 +18,6 @@
     
     <div align="center"><img src="./img/protection.jpg" width="500" alt=" logo"></div>
 
-[You can also familiarize yourself with the diagram of the battery, which was made by the Lego](https://github.com/RobotekLumino/Future-Engineers-/blob/main/schemes/rechargaeble-battery.pdf)
+[You can also familiarize yourself with the diagram of the battery, which was made by the Lego](/schemes/Electric_scheme/rechargaeble-battery.pdf)
    </div>  
  
