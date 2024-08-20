@@ -39,6 +39,6 @@ In LEGO Mindstorms EV3 software or programming libraries like EV3DEV, you can us
 The color sensor is used to determine the direction of movement of the circle and reset the odometry. It determines the orange and blue colors of the lines: if the first color that the robot saw is orange, then it will move clockwise, and if it is blue, then it will move counterclockwise. To do this, we used the RGB mode of the color sensor, if the blue reading is less than 25, then there is a line, then if the red reading is more than 50, then the line is orange, and if it is less, then it is blue. <br>
 You can read about the logic of resetting odometry using a line <a href="-">here</a> 
 
-[Color sensor selection](/research/Сolor_sensor_selection/README.md)
+[Color sensor selection](/research/Сolor_sensor_selection/README.md) <br>
 [electroscheme](/schemes/Electric_scheme/color-sensor.pdf) <br>
 [manual guide](https://ev3-help-online.api.education.lego.com/Education/en-us/page.html?Path=blocks%2FLEGO%2FColorSensor.html)
