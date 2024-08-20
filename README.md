@@ -34,7 +34,7 @@
 ***
 ## Our vehicle: 
 ![vehph](./v-photos/carL.jpg)
-We used components from a EV3 MINDSTORMS Educational kit + a Pixy v2 Camera and some other technic pieces from other sets. 
+We used components from a EV3 MINDSTORMS Educational kit + a Pixy v2.1   Camera and some other technic pieces from other sets. 
 
 A full list of all the components (not including the camera) can be found here: [Part List](models/part-list.pdf)
 
@@ -49,7 +49,7 @@ The final program/code for our autonomous vehicle can be found here: [Program](s
 
 ### Motor Selection and Implementation
 
-Motor selection is a crucial component of our vehicle's autonomous navigation system. The Lego MINDSTORMS EV3 set provides two distinct motor options: Large Motors and Medium Motors. In making our selection, we considered key factors such as rotation speed, torque, and encoder accuracy.
+Motor selection is a crucial component of our vehicle's autonomous navigation system. The Lego MINDSTORMS EV3 set provides two distinct motor options: Large Motors and Medium Motors. In making our selection, we considered key factors such as rotation speed, torque, and encoder accuracy. We also added a large motor from the nxt kit during our motor selection research.
 
 ![extract](./img/text.png)
 
@@ -58,8 +58,14 @@ Given the constraints of our compact vehicle dimensions (300x200x300mm) and the 
 
 ### Chassis Design and Implementation
 
-The steering mechanism, located in the front, utilizes smaller wheels, while the driving mechanism at the rear incorporates larger Lego Technic wheels placed closely together.
-The placement of larger wheels at the rear serves multiple practical purposes. Larger wheels cover more ground per revolution, resulting in higher linear speed, which aligns with our priority for speed in the competition. Additionally, positioning the larger rear wheels as close to each other as possible, known as a "narrow rear track," mitigates the absence of a differential system. A narrow rear track minimizes the difference in wheel paths during turns, enhancing the vehicle's maneuverability and reducing wheel scrub.
+The front steering mechanism uses smaller wheels than the rear and incorporates an approximated Ackermann angle to ensure more precise and stable operation of the odometry and coordinate system. Applying the Ackermann angle allows each front wheel to follow its optimal trajectory during turns, significantly reducing wheel slip and thereby improving the accuracy of odometry measurements. This is crucial for enhancing the precision of the vehicle’s position tracking in space. <br>
+
+ [Ackerman angle studies](/research/Ackermann_angle_study/README.md)
+
+The rear drive mechanism features large LEGO Technic wheels. Placing the large wheels at the rear serves several practical purposes. Large wheels cover more distance per revolution, leading to higher linear speed, which aligns with our emphasis on speed in the competition. We also use a differential, which plays a key role in improving the vehicle's efficiency and maneuverability. 
+
+The differential allows the rear wheels to rotate at different speeds during turns. This is particularly important because the inner wheel travels a shorter distance than the outer wheel during a turn. Without a differential, both wheels would have to rotate at the same speed, leading to increased friction, tire slip, and reduced handling. The differential addresses this issue by ensuring smooth cornering, reducing tire wear, and improving overall vehicle stability.
+
 ![render](./img/robot.render.jpeg)
 ***
 
@@ -67,41 +73,41 @@ The placement of larger wheels at the rear serves multiple practical purposes. L
 
 ### Sensor Management
 
-Our autonomous vehicle relies on a combination of sensors to execute precise movements, crucial for both obstacle avoidance and the qualification challenges of the competition.
+Our autonomous vehicle employs a combination of sensors to perform precise movements, which is crucial for both obstacle avoidance and qualifying trials in the competition.
 
-Color Sensor: This sensor is employed to identify turns and determine the driving direction by reading colored lines (orange or blue) on the competition field.
+Color Sensor: This sensor is used to determine turns and direction by reading colored lines (orange or blue) on the competition field. During the navigation phase, we use the color sensor to reset odometry by detecting two lines and applying mathematical formulas to reset the odometry.
+[Color sensor selection](/research/Сolor_sensor_selection/README.md)
 
-Ultrasonic Sensor: Positioned at the front of the vehicle, the ultrasonic sensor measures the distance between the vehicle and field barriers, ensuring that the vehicle's relative position before and after a turn is continuously known.
+Ultrasonic Sensor: Positioned at the front of the vehicle, the ultrasonic sensor measures the distance between the vehicle and field barriers, ensuring that the vehicle's relative position before and after turns is consistently known.
 
-Gyro Sensor: The gyro sensor plays a pivotal role in maintaining proper alignment. It detects changes in the vehicle's driving angle, alerting the system to any misalignment or deviation. The implementation of a PID (Proportional-Integral-Derivative) regulator ensures that any deviation from the desired steering angle is continuously corrected, guaranteeing the vehicle's straight and precise trajectory.
+Gyroscope Sensor: The gyroscope sensor plays a key role in maintaining proper alignment. It detects changes in the vehicle's angle of movement, alerting the system to any inaccuracies or deviations. The implementation of a PID (Proportional-Integral-Derivative) controller ensures that any deviation from the desired steering angle is continuously corrected, guaranteeing a straight and accurate trajectory.
 
-The PID regulator operates in a continuous loop throughout the program, ensuring the vehicle remains aligned and on the intended path, supporting its autonomous navigation capabilities.
+The PID controller operates in a continuous cycle throughout the program, ensuring that the vehicle stays on its planned path, maintaining its autonomous navigation capabilities.
 
-Pixy v2 Camera: A camera is used to detect and differentiate obstacles during the obstacle round. Custom made 3D Print Models for the [cover](models/pixy_2_cover.stl) and the [case](models/pixy_2_case.stl) for the camera can be found in the corresponding links.
+Pixy v2.1 Camera: A camera is used to detect and differentiate obstacles during the obstacle round. Custom made 3D Print Models for the [cover](models/pixy_2_cover.stl) and the [case](models/pixy_2_case.stl) for the camera can be found in the corresponding links.
 
 ### Power Management
 The power for the EV3 Brick and the whole vehicle comes from a rechargeable 10V Lithium Battery. Power management within the EV3 brick consists of multiple switching regulations which are tightly controlled and interlinked in order to boot the electronic circuit correctly.
 To protect the EV3 brick from short circuit, 3 poly switches are included, one for each of the two motor drivers and one for the rest of the circuit. Each poly switch has a hold current at approximately 1.1 A and will be triggered at approximately 2.2 A.
 
-Power Schemes for every electronic part of the vehicle can be found here:
+### More details about each sensor and its power supply circuit can be found here:
 
-[Color Sensor](schemes/color_sensor)
+[Color Sensor](/schemes/color-sensor/README.md)
 
-[Gyro Sensor](schemes/gyro-sensor.pdf)
+[Gyro Sensor](/schemes/gyro-sensor/README.md)
 
-[Medium Motor](schemes/Motors)
+[Medium Motor](/schemes/medium-motor/README.md)
 
-[Pixy v2](schemes/pixy2_schematic-2.2.pdf)
+[Pixy v2](/schemes/pixy2_camera/README.md)
 
-[Ultrasonic Sensor](schemes/ultrasonic-sensor.pdf)
+[Ultrasonic Sensor](/schemes/ultrasonic-sensor/README.md)
 
-[EV3 P-Brick](schemes/programmable-brick.pdf)
+[EV3 P-Brick](/schemes/programmable-brick/README.md)
 
-[Rechargeable Battery](schemes/Internal_battery_components)
+[Rechargeable Battery](/schemes/Electric_scheme/rechargaeble-battery.pdf)
 
 [Internal battery components](schemes/Internal_battery_components)
 
-[Ultrasonic Sensor](schemes/ultrasonic-sensor.pdf)
 
 ***
 
@@ -111,7 +117,7 @@ Effective obstacle management is a critical aspect of our autonomous self-drivin
 
 ### Sensor-Based Obstacle Detection
 
-Our robot relies on a Pixy v2 Camera to detect obstacles, differentiating between red and green objects with precision. The camera's built-in plugin allows for the recognition of color-based signatures, making it a versatile and efficient tool for identifying obstacles.
+Our robot relies on a Pixy v2.1 Camera to detect obstacles, differentiating between red and green objects with precision. The camera's built-in plugin allows for the recognition of color-based signatures, making it a versatile and efficient tool for identifying obstacles.
 To ensure accurate color detection, we employ PixyMon software to calibrate the camera. This calibration process fine-tunes the camera's color recognition capabilities, allowing our robot to precisely distinguish between red and green obstacles on the competition field.
 
 ![pixymon](./img/pixymon.jpeg)
@@ -122,22 +128,68 @@ Once the obstacle coordinates are collected, we import this data into software t
 
 ![graph](./img/graph.jpeg)
 
-### Integration into the Robot's Program
-With the optimized obstacle-avoidance trajectory in hand, we proceed to integrate it into our robot's program. Our program includes a regulator designed to interpret and act upon the trajectory data.
-This regulator operates in real-time, continuously assessing the robot's position in relation to the obstacles and adjusting its path accordingly. By using the trajectory data as a reference, the regulator guides the robot in a manner that ensures smooth and efficient obstacle avoidance. Additionally, a proportional-integral-derivative (PID) controller is employed to further fine-tune and enhance the robot's responsiveness when navigating around obstacles.
+## Integration into the Robot's Program
+### Autonomous Robot Navigation
 
-![program](./img/program.jpeg)
+
+Our robot's program integrates an optimized obstacle avoidance trajectory. The system employs a regulator to analyze and process trajectory data in real-time. This regulator continuously monitors the robot’s position relative to obstacles and adjusts its path to ensure smooth and efficient navigation. A PID (Proportional-Integral-Derivative) controller is used for precise tuning and enhancing the robot's responsiveness during obstacle avoidance.
+
+## Sensor Integration and Odometry
+
+### Sensor-Based Navigation
+
+1. **Direction Determination:** Upon startup, the robot begins moving and detects the first line. If the line is orange, the robot will proceed clockwise; if the line is blue, it will proceed counterclockwise. The robot then reads the second line, and the difference between the two lines allows the robot to correctly reset its odometry and gyroscopic sensor with each turn.
+
+2. **Reading the Second Line:** After crossing the first line, the robot continues and crosses the second line. By analyzing the difference between the two lines, the system calculates the exact position and adjusts the odometry.
+
+3. **Odometry and Gyroscope Reset:** After determining the position with the second line, the odometry and gyroscopic sensor are reset. This ensures measurement accuracy and prevents errors from sensor drift.
+
+4. **Coordinate Conversion:** Combining data from encoders, the gyroscope, and relevant formulas, we compute the robot's displacement from its starting position and convert it into x and y coordinates. This converts relative odometry into an absolute coordinate system with the map center as the origin.
+
+### Integration and Real-Time Adjustments
+
+All these steps are integrated into a comprehensive control system, allowing the robot to effectively track its position and adjust its path in real time.
+
+![program](./img/code.png)
 
 
 ## Photos
 
 ### Vehicle Photos
-![vehph](./v-photos/1.jpg)
-![vehph](./v-photos/2.jpg)
-![vehph](./v-photos/3.jpg)
-![vehph](./v-photos/4.jpg)
-![vehph](./v-photos/5.jpg)
-![vehph](./v-photos/6.jpg)
+
+
+<table>
+<tr>
+  <th width=50%>
+
+![alt text](./img/1nofon.png)
+  </th>
+  <th width=50%>
+
+![alt text](./img/2nofon.png)
+  </th>
+</tr>
+<tr>
+  <td width=50%>
+    
+![alt text](./img/3nofon2.png)
+  </td>
+  <td width=50%>
+
+![alt text](./img/4nofon.png)
+  </td>
+</tr>
+<tr>
+  <td width=50%>
+
+![alt text](./img/5nofon.png)
+  </td>
+  <td width=50%>
+
+![alt text](./img/6nofon.png)
+  </td>
+</tr>
+</table>
 
 ### Team Photos
 
