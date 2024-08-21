@@ -36,11 +36,11 @@
 ![vehph](./v-photos/carL.jpg)
 We used components from a EV3 MINDSTORMS Educational kit + a Pixy v2.1   Camera and some other technic pieces from other sets. 
 
-A full list of all the components (not including the camera) can be found here: [Part List](models/part-list.pdf)
+A full list of all the components (not including the camera) can be found here: [Part List](models/robot_partlist.pdf)
 
-Instructions for assembling the robot: [Instructions](models/robot_assembly_instructions_FE_Lumino.pdf)
+Instructions for assembling the robot: [Instructions](models/robot_instruction.pdf)
 
-A 3D model of the robot made in Studio 2.0 can be found here: [3D Model](models/FE-Robot.io)
+A 3D model of the robot made in Studio 2.0 can be found here: [3D Model](models/LuminoRobot.io)
 
 The final program/code for our autonomous vehicle can be found here: [Program](src/FE_Lumino.ev3)
 ***
@@ -66,7 +66,7 @@ The rear drive mechanism features large LEGO Technic wheels. Placing the large w
 
 The differential allows the rear wheels to rotate at different speeds during turns. This is particularly important because the inner wheel travels a shorter distance than the outer wheel during a turn. Without a differential, both wheels would have to rotate at the same speed, leading to increased friction, tire slip, and reduced handling. The differential addresses this issue by ensuring smooth cornering, reducing tire wear, and improving overall vehicle stability.
 
-![render](./img/robot.render.jpeg)
+![render](./img/RobotekLumino_4.png)
 ***
 
 ## Power and Sense Management
