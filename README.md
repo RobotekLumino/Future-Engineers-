@@ -160,18 +160,19 @@ All these steps are integrated into a comprehensive control system, allowing the
 
 <div align="center">
   <table>
-    <tr>
-      <td><img src="./img/top2.png" alt="Robot Photo 1" width=50%></td>
-      <td><img src="./img/back.png" alt="Robot Photo 2" width=70%></td>
-      <td><img src="./img/bottom.png" alt="Robot Photo 3" width=70%></td>
+    <tr align="center">
+      <td><img src="./img/top.png" alt="Robot Photo 1" width="50%"></td>
+      <td><img src="./img/back.png" alt="Robot Photo 2" width="70%"></td>
+      <td><img src="./img/bottom.png" alt="Robot Photo 3" width="50%"></td>
     </tr>
-    <tr>
-      <td><img src="./img/right.png" alt="Robot Photo 4" width=70%></td>
-      <td><img src="./img/front.png" alt="Robot Photo 5" width=70%></td>
-      <td><img src="./img/left.png" alt="Robot Photo 4" width=70%></td>
+    <tr align="center">
+      <td><img src="./img/right.png" alt="Robot Photo 4" width="70%"></td>
+      <td><img src="./img/front.png" alt="Robot Photo 5" width="70%"></td>
+      <td><img src="./img/left.png" alt="Robot Photo 6" width="70%"></td>
     </tr>
   </table>
 </div>
+
 
 ### Team Photos
 
