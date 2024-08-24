@@ -33,7 +33,7 @@
 
 ***
 ## Our vehicle: 
-![vehph](./v-photos/carL.jpg)
+![vehph](./img/main_robot.png)
 We used components from a EV3 MINDSTORMS Educational kit + a Pixy v2.1   Camera and some other technic pieces from other sets. 
 
 A full list of all the components (not including the camera) can be found here: [Part List](models/robot_partlist.pdf)
@@ -66,7 +66,7 @@ The rear drive mechanism features large LEGO Technic wheels. Placing the large w
 
 The differential allows the rear wheels to rotate at different speeds during turns. This is particularly important because the inner wheel travels a shorter distance than the outer wheel during a turn. Without a differential, both wheels would have to rotate at the same speed, leading to increased friction, tire slip, and reduced handling. The differential addresses this issue by ensuring smooth cornering, reducing tire wear, and improving overall vehicle stability.
 
-![render](./img/RobotekLumino_4.png)
+![render](./img/asiimov%20_lumino2.png)
 ***
 
 ## Power and Sense Management
@@ -141,7 +141,7 @@ Our robot's program integrates an optimized obstacle avoidance trajectory. The s
 
 2. **Reading the Second Line:** After crossing the first line, the robot continues and crosses the second line. By analyzing the difference between the two lines, the system calculates the exact position and adjusts the odometry.
 
-3. **Odometry and Gyroscope Reset:** After determining the position with the second line, the odometry and gyroscopic sensor are reset. This ensures measurement accuracy and prevents errors from sensor drift.
+3. **[Odometry](./research/Odometry) and Gyroscope Reset:** After determining the position with the second line, the odometry and gyroscopic sensor are reset. This ensures measurement accuracy and prevents errors from sensor drift.
 
 4. **Coordinate Conversion:** Combining data from encoders, the gyroscope, and relevant formulas, we compute the robot's displacement from its starting position and convert it into x and y coordinates. This converts relative odometry into an absolute coordinate system with the map center as the origin.
 
@@ -156,46 +156,27 @@ All these steps are integrated into a comprehensive control system, allowing the
 
 ### Vehicle Photos
 
+![Robot](./img/Robot_fun.png)
 
-<table>
-<tr>
-  <th width=50%>
-
-![alt text](./img/1nofon.png)
-  </th>
-  <th width=50%>
-
-![alt text](./img/2nofon.png)
-  </th>
-</tr>
-<tr>
-  <td width=50%>
-    
-![alt text](./img/3nofon2.png)
-  </td>
-  <td width=50%>
-
-![alt text](./img/4nofon.png)
-  </td>
-</tr>
-<tr>
-  <td width=50%>
-
-![alt text](./img/5nofon.png)
-  </td>
-  <td width=50%>
-
-![alt text](./img/6nofon.png)
-  </td>
-</tr>
-</table>
+<div align="center">
+  <table>
+    <tr>
+      <td><img src="./img/top2.png" alt="Robot Photo 1" width=50%></td>
+      <td><img src="./img/back.png" alt="Robot Photo 2" width=70%></td>
+      <td><img src="./img/bottom.png" alt="Robot Photo 3" width=70%></td>
+    </tr>
+    <tr>
+      <td><img src="./img/right.png" alt="Robot Photo 4" width=70%></td>
+      <td><img src="./img/front.png" alt="Robot Photo 5" width=70%></td>
+      <td><img src="./img/left.png" alt="Robot Photo 4" width=70%></td>
+    </tr>
+  </table>
+</div>
 
 ### Team Photos
 
 ![teamph2](./t-photos/t1.jpg)
 ![teamph](./t-photos/t2.jpg)
-
-
 
 ***
 
