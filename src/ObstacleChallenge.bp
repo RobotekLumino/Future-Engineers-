@@ -1,0 +1,290 @@
+'Importing our custom libraries
+import "Mods\Odometry"
+import "Mods\AdvEncoder"
+import "Mods\AdvGyro"
+import "Mods\ColorRGB"
+import "Mods\SteerControl"
+import "Mods\AdvPixy"
+import "Mods\Tool"
+import "Mods\ToolBox"
+
+'Setting up proper mods for sensors
+Sensor.SetMode(2, 0)
+Sensor.SetMode(3, 4)
+
+'Hard reset of gyro sensor
+AdvGyro.CheckReset(2, result)
+While result = 0
+  Program.Delay(1000)
+  AdvGyro.HardReset(2)
+  AdvGyro.CheckReset(2, result)
+EndWhile
+
+'Reading configuration of color sensor
+col = EV3File.OpenRead("col")
+Rmin = EV3File.ConvertToNumber(EV3File.ReadLine(col))
+Rmax = EV3File.ConvertToNumber(EV3File.ReadLine(col))
+Gmin = EV3File.ConvertToNumber(EV3File.ReadLine(col))
+Gmax = EV3File.ConvertToNumber(EV3File.ReadLine(col))
+Bmin = EV3File.ConvertToNumber(EV3File.ReadLine(col))
+Bmax = EV3File.ConvertToNumber(EV3File.ReadLine(col))
+ColorRGB.Config(Rmin, Rmax, Gmin, Gmax, Bmin, Bmax)
+
+'Configuration of our custom libraries
+Odometry.Config(15.53)
+AdvGyro.ResetPort2(0)
+AdvEncoder.Config()
+SteerControl.Config(1.5, 0.1, 3, 36, 54)
+
+'Setting up steering mechanism
+MotorC.StartPower(-80)
+Program.Delay(2000)
+MotorC.ResetCount()
+
+'Setting up basic values of our variables
+angleKp = 0.7
+angleKd = 3
+angleOld = 0
+clockWise = 0
+turnCounter = 0
+turnAngle = 90
+UArtReady = 0
+SteeringReady = 0
+OdometryReady = 0
+I2CReady = 0
+yRange = 40
+yCameraRange = 10
+
+'Subprogram that continously writes down values of gyro and color sensors into variables
+Sub UArt
+  UArtReady = 1
+  While 1=1
+    AdvGyro.WritePort2(gyroAngle)
+    ColorRGB.ReadPort3(r, g, b)
+  EndWhile
+EndSub
+
+'Subprogram that continously writes down values from pixycam into variables
+Sub I2C
+  I2CReady = 1
+  While 1=1
+    AdvPixy.getLargest(1, pixyX, pixyY, signature)
+  EndWhile
+EndSub
+
+'Subprogram that continously puts steering wheels in the right position
+Sub Steering
+  SteeringReady = 1
+  While 1=1
+    SteerControl.Core(MotorC.GetTacho(), powerC)
+    MotorC.StartPower(powerC)
+  EndWhile
+EndSub
+
+'Subprogram that continously writes down position of the robot using odometry
+Sub Odometry
+  OdometryReady = 1
+  While 1=1
+    AdvEncoder.getChangeA(encChangeA)
+    Odometry.Write(gyroAngle, encChangeA)
+    Odometry.Read(X, Y)
+  EndWhile
+EndSub
+
+'Function that implements logical negation
+Function Not(in number yes, out number no)
+  If yes = 0 Then
+    no = 1
+  Else
+    no = 0
+  EndIf
+EndFunction
+
+'Function to check colours of the lines
+Function ColorCheck(out number isWhite, out number isOrange)
+  If @b < 55 Then
+    isWhite = 0
+  Else
+    isWhite = 1
+  EndIf
+  If @r > 70 Then
+    isOrange = 1
+  Else
+    isOrange = 0
+  EndIf
+EndFunction
+
+'Function that implements basic PD controller for stabilizing steering angles
+Function AngleCore(in number angle, out number aim)
+  aim = @angleKp * angle + @angleKd * (angle - @angleOld)
+  @angleOld = angle
+EndFunction
+
+'Function that puts steering wheels into correct position according to some point on the game field
+Function SteerToPoint(in number x, in number y)
+  deltaX = x - @X
+  deltaY = y - @Y
+  Tool.atan2(deltaY, deltaX, heading)
+  ToolBox.AngleWrap(@gyroAngle - heading, error)
+  AngleCore(error, headingDifference)
+  SteerControl.SetTarget(headingDifference)
+EndFunction
+
+'Function that resets position and angle of the robot on the start
+Function StartReset(in number turnAngle)
+  If @X > 40 Then
+    resetX = @X - 15
+  Else 
+    resetX = @X + 35
+  EndIf
+  If @clockWise = 0 Then
+    AdvGyro.ResetPort2(@gyroAngle + turnAngle)
+    resetY = resetX - 100
+    resetX = -100 - @Y
+  Else
+    AdvGyro.ResetPort2(@gyroAngle - turnAngle)
+    resetY = 100 - resetX
+    resetX = @Y - 100
+  EndIf
+  AdvGyro.WritePort2(@gyroAngle)
+  Odometry.Reset(resetX, resetY)
+  Odometry.Write(0, 0)
+  @turnCounter++
+  Time.Reset1()
+EndFunction
+
+'Function that resets position and angle of the robot on the turns
+Function Reset(in number turnAngle)
+  If @clockWise = 0 Then
+    AdvGyro.ResetPort2(@gyroAngle + turnAngle)
+    resetY = @X - 100
+    resetX = -100 - @Y
+  Else
+    AdvGyro.ResetPort2(@gyroAngle - turnAngle)
+    resetY = 100 - @X
+    resetX = @Y - 100
+  EndIf
+  AdvGyro.WritePort2(@gyroAngle)
+  Odometry.Reset(resetX, resetY)
+  Odometry.Write(0, 0)
+  @turnCounter++
+  Time.Reset1()
+EndFunction
+
+'Function that puts steering wheels in the position needed to avoid obstacles of different colors
+Function DetourObstacle()
+  If @signature = 2 Then
+    desiredX = -0.0026 * @pixyY * @pixyY + 0.9926 * @pixyY + 26.461
+  Else
+    desiredX = 0.0026 * @pixyY * @pixyY - 0.9926 * @pixyY - 26.461
+  EndIf
+  SteerControl.SetTarget((desiredX - @pixyX) * 0.5)
+  If @pixyY > 20 And @turnCounter < 8 Then
+    lastSignature = @signature
+  EndIf
+EndFunction
+
+'Function that is responsible for choosing the logic of driving through the field
+Function Autopilot()
+  If @signature = 0 Or @Y > @yRange Or @Y < -@yRange Or @pixyY < @yCameraRange Then
+    MotorAB.SetPower(60)
+    SteerToPoint(@X + 50, 0)
+  Else
+    MotorAB.SetPower(60)
+    DetourObstacle()
+  EndIf
+EndFunction
+
+'Our starting function, implements logic before the first line
+Function Start()
+  isWhite = 1
+  isOrange = 0
+  MotorAB.Start()
+  While isWhite = 1
+    Autopilot()
+    ColorCheck(isWhite, isOrange)
+  EndWhile
+  @clockwise = isOrange
+  Speaker.Tone(50, 3000, 100)
+  StartReset(@turnAngle)
+EndFunction
+
+'Running parallel subprograms that need to be ran simultaneously with the main program
+Thread.Run = UArt
+Thread.Run = I2C
+Thread.Run = Odometry
+Thread.Run = Steering
+
+'Checking that all subprograms are already initialized
+While UArtReady = 0 Or SteeringReady = 0 Or OdometryReady = 0 Or I2CReady = 0
+  
+EndWhile
+
+'Waiting for the start button to be pressed
+Buttons.Wait()
+Speaker.Tone(50, 300, 100)
+Program.Delay(500)
+
+'Calling the start function
+Start()
+MotorAB.SetPower(60)
+
+'Main loop that performs driving between lines and line checks for first two laps
+While turnCounter < 8
+  isWhite = 1
+  isOrange = 0
+  While Time.Get1() < 500 Or isWhite = 1 Or isOrange <> clockWise
+    Autopilot()
+    ColorCheck(isWhite, isOrange)
+  EndWhile
+  Speaker.Tone(50, 3000, 100)
+  Reset(turnAngle)
+EndWhile
+
+'Performing U-turn after two laps, if needed
+If lastSignature = 1 Then 
+  While Time.Get1() < 500 Or isWhite = 1 Or isOrange <> clockWise
+    Autopilot()
+    ColorCheck(isWhite, isOrange)
+  EndWhile
+  Speaker.Tone(50, 300, 100)
+  Not(clockWise, clockWise)
+  AdvGyro.ResetPort2(gyroAngle - 180)
+  AdvGyro.WritePort2(gyroAngle)
+  Odometry.Reset(0 - X, 0 - Y)
+  Odometry.Write(0, 0)
+  If Y > 0 Then
+    target = 40
+  Else
+    target = -40
+  EndIf
+  While Math.Abs(gyroAngle) > 20
+    SteerControl.SetTarget(target)
+  EndWhile
+EndIf
+
+'Loop that performs driving after two laps
+While turnCounter < 12
+  isWhite = 1
+  isOrange = 0
+  While Time.Get1() < 500 Or isWhite = 1 Or isOrange <> clockWise
+    Autopilot()
+    ColorCheck(isWhite, isOrange)
+  EndWhile
+  Speaker.Tone(50, 3000, 100)
+  Reset(turnAngle)
+EndWhile
+
+'Reaching the finish point in the start area
+While X < 0 Or Time.Get1() < 200
+  Autopilot()
+EndWhile
+
+'Breaking motors and playing finish sound
+MotorAB.OffAndBrake()
+Speaker.Tone(100, 3000, 400)
+Speaker.Wait()
+Speaker.Tone(100, 3000, 400)
+Speaker.Wait()
+Speaker.Tone(100, 3000, 400)
+Speaker.Wait()
