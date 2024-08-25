@@ -25,7 +25,6 @@
   * [Sensor-Based Obstacle Detection](#Sensor-Based-Obstacle-Detection)
   * [Trajectory Calibration](#trajectory-calibration)
   * [Integration into the Robot's Program](#Integration-into-the-Robot's-Program)
-  * [Pseudo Code](#pseudo-code)
 * [**Photos**](#photos)
   * [Team Photos](#team-photos)
   * [Vehicle Photos](#vehicle-photos)
@@ -42,7 +41,7 @@ Instructions for assembling the robot: [Instructions](models/robot_instruction.p
 
 A 3D model of the robot made in Studio 2.0 can be found here: [3D Model](models/LuminoRobot.io)
 
-The final program/code for our autonomous vehicle can be found here: [Program](src/FE_Lumino.ev3)
+The final program/code for our autonomous vehicle can be found here: [Program](src)
 ***
 
 ## Mobility Management
