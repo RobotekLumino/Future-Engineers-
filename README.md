@@ -182,9 +182,9 @@ All these steps are integrated into a comprehensive control system, allowing the
 
 ## Performance Videos
 
-Qualification Round Challenge: https://www.youtube.com/watch?v=jyV4YhzWh4M
+Qualification Round Challenge: https://youtu.be/6GB2IOQi8mM?si=YZQlWzMltXwP1cnq
 
-Obstacle Round Challenge: https://www.youtube.com/watch?v=LjQPfJy8HMM
+Obstacle Round Challenge: https://youtu.be/r2_ArxA0ATI?si=F9Ab_i3WUzBK2m0p
 
 Robot parts discussion: https://youtu.be/gbITDXvny-k
 
