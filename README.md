@@ -186,6 +186,8 @@ Qualification Round Challenge: https://www.youtube.com/watch?v=jyV4YhzWh4M
 
 Obstacle Round Challenge: https://www.youtube.com/watch?v=LjQPfJy8HMM
 
+Robot parts discussion: https://youtu.be/gbITDXvny-k
+
 ***
 
 
