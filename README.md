@@ -369,7 +369,7 @@ After numerous tests and experiments, we concluded that abandoning the full Acke
 
 ### Vehicle Photos
 
-![Robot](./img/betman.png)
+![Robot](./img/Betman.png)
 
 <div align="center">
   <table>
