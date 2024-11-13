@@ -325,11 +325,25 @@ Once the obstacle coordinates are collected, we import this data into software t
 
 Our robot's program integrates an optimized obstacle avoidance trajectory. The system employs a regulator to analyze and process trajectory data in real-time. This regulator continuously monitors the robot’s position relative to obstacles and adjusts its path to ensure smooth and efficient navigation. A PID (Proportional-Integral-Derivative) controller is used for precise tuning and enhancing the robot's responsiveness during obstacle avoidance.
 
-### Parking Algorithm
+## Parking Algorithm
 
- 
+### Completion of the Main Route
+After completing three laps along the route, the robot determines the direction in which the ultrasonic sensor is pointing.
 
+### Turning towards the outer wall
+If by the time the laps are completed, the ultrasonic sensor is pointing inwards, the robot turns so that the sensor is oriented towards the outer wall.
 
+### Moving along the outer wall
+After turning, the robot aligns itself along the outer wall and begins to move parallel to it, maintaining the optimal distance for searching for a parking space.
+
+### Finding a parking space using the Pixy camera
+While moving along the wall, the robot uses the Pixy camera to search for a parking space. The camera is configured to recognize the color markings indicating the parking zone, which allows the robot to stop at the desired point in time.
+
+### Parking maneuver
+After detecting the parking zone, the camera sends a signal to the robot, which then performs the parking maneuver, carefully driving into the designated space.
+<br>
+
+<img src="./img/parking.png" width="400" height="400">
 
 ## Problems when preparing for competitions
 
