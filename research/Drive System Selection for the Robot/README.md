@@ -50,8 +50,8 @@ During development, we initially assembled a test model with **front wheel drive
 Based on these factors, we decided to abandon front wheel drive and choose **rear wheel drive**, which provided better stability, control, and energy efficiency for performing our robot's tasks.
 
 <p align="center">
-  <img src="../img/front wheel drive.jpg" width="40%" height="700px" style="margin-right: 10px;" />
-  <img src="../img/front wheel drive2.jpg" width="40%" height="700px" />
+  <img src="../img/front wheel drive.jpg"  style="margin-right: 10px;" />
+  <img src="../img/front wheel drive2.jpg"  />
 
 </p>
 
