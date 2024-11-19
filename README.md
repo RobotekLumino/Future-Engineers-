@@ -155,18 +155,29 @@ While the Ackermann angle has many advantages and was chosen by us at the initia
 
 ## 2 - Differential gear
 
-<p>The differential gear is an important part of our robot's design, allowing the rear wheels to rotate at different speeds while maintaining a balanced power distribution. This is especially important when making turns or in conditions where the grip between the wheels changes, ensuring smooth and controlled movement. The next section discusses the operation of the differential gear and its main components:</p>
+A **differential** is crucial for ensuring smooth and stable movement of a robot during turns. Without a differential, both of the robot's drive wheels rotate at the same speed, which makes turning difficult. This is because the inner wheel (relative to the center of the turn) travels a shorter distance than the outer wheel.
 
-<strong>Key elements:</strong>
-<ol>
-    <li><strong>Gear housing:</strong> A large gear connected to the axle, which receives torque from the motor or drive shaft.</li>
-    <li><strong>Small gear:</strong> A smaller gear connected to the drive shaft and meshing with the gear housing.</li>
-    <li><strong>Side gears:</strong> Two elements connecting the differential to the axle shafts.</li>
-    <li><strong>Spider gears:</strong> Located between the side gears, these gears allow the wheels to rotate at different speeds.</li>
-</ol>
+### Problems Without a Differential:
+1. **Increased resistance**: The mismatch between wheel speeds leads to higher friction and reduced maneuvering efficiency.
+2. **Jerks and skidding**: Unequal rotation can cause the wheels to slip, resulting in jerky movements and rapid wear of the tires.
+3. **Reduced controllability**: Steering becomes less precise, especially during complex paths or tight maneuvers.
 
-<strong>Operating principle:</strong>
-<p>When the robot is moving in a straight line, the differential evenly distributes the torque to both wheels. When turning, the inside wheel (located closer to the center of rotation) must rotate slower than the outside wheel to avoid slipping. The differential solves this problem by allowing the side gears to rotate at different speeds while effectively distributing power.</p>
+
+## How a Differential Works
+
+A **differential** is a mechanism that allows drive wheels to rotate at different speeds while maintaining consistent torque distribution.
+
+### Primary Functions of a Differential:
+1. **Compensation for distance differences**: During a turn, the inner wheel travels a shorter path and must rotate slower than the outer wheel.
+2. **Torque transfer**: The differential delivers driving force to both wheels, even if they spin at different speeds.
+3. **Improved handling**: By synchronizing wheel speeds with the trajectory, the differential enables smooth and precise motion.
+
+
+### How It Operates:
+- The differential uses a **planetary gear system** to connect the drive shaft with both wheels.
+- When moving straight, the gears rotate as a single unit, transmitting equal speed to both wheels.
+- During a turn, the mechanism allows the inner wheel to slow down and the outer wheel to speed up. Torque is distributed proportionally to maintain stability and follow the desired path.
+
 
 <strong>Gear ratio calculation:</strong>
 <p>Before designing a differential gear, it is important to accurately calculate the gear ratio. To do this, it is necessary to take into account the motor characteristics and the design of the differential. The gear ratio can be calculated by counting the number of teeth on the gear housing and side gears:</p>
