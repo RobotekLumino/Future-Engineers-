@@ -411,6 +411,8 @@ After numerous tests and experiments, we concluded that abandoning the full Acke
   </table>
 </div>
 
+  <li>You can see a photo of the robot <a href="https://github.com/RobotekLumino/Future-Engineers-/tree/main/v-photos" target="_blank">here</a></li>
+
 ### Team Photos
 
 ![teamph2](./t-photos/t1.jpg)
