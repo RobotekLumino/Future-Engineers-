@@ -399,9 +399,9 @@ After numerous tests and experiments, we concluded that abandoning the full Acke
 <div align="center">
   <table>
     <tr align="center">
-      <td><img src="./img/top.png" alt="Robot Photo 1" width="50%"></td>
-      <td><img src="./img/back.png" alt="Robot Photo 2" width="70%"></td>
-      <td><img src="./img/bottom.png" alt="Robot Photo 3" width="60%"></td>
+      <td><img src="./img/top.png" alt="Robot Photo 1" width="60%"></td>
+      <td><img src="./img/back.png" alt="Robot Photo 2" width="80%"></td>
+      <td><img src="./img/bottom.png" alt="Robot Photo 3" width="90%"></td>
     </tr>
     <tr align="center">
       <td><img src="./img/right.png" alt="Robot Photo 4" width="70%"></td>
